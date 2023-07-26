@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+          /* CSS cho giao diện */
+          table {
+            width: 100%;
+            border-collapse: collapse;
+          }
+          th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+          }
+          th {
+            background-color: #f2f2f2;
+          }
+          form {
+            margin-bottom: 20px;
+          }
+        </style>
+    <title>Document</title>
+</head>
+      <body>
+        <h1>Ứng dụng Danh bạ</h1>
+        <form id="contactForm">
+          <label for="name">Tên:</label>
+          <input type="text" id="name" required>
+          <label for="phone">Số điện thoại:</label>
+          <input type="text" id="phone" required>
+          <button type="submit">Thêm mới</button>
+        </form>
+        <input type="text" id="searchInput" placeholder="Tìm kiếm">
+        <table id="contactTable">
+          <tr>
+            <th>Tên</th>
+            <th>Số điện thoại</th>
+            <th></th>
+          </tr>
+        </table>
+      
+        <script src="script.js"></script>
+      </body>
+      <script src="b4.js"></script>
+</html>

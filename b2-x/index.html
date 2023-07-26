@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="tour_section">
+        <div id="content">
+            <div class="content-section">
+                <h2 class="section-header text-white">WORK SHOP</h2>
+                <p class="section-sub-header text-white">Remember to book your tickets!</p>
+                <!-- Ticket -->
+                <div id="ticket-list"></div>
+                <!-- <ul class="ticket-list">
+                    <li>September <span class="sold-out">Sold out</span></li>
+                    <li>October <span class="sold-out">Sold out</span></li>
+                    <li>November <span class="quantity">3</span></li>
+                </ul> -->
+                <!-- Places -->
+                <div id="places-list">
+                    <!-- <div class="place-item">
+                        <img src="./img/newyork.jpeg" alt="NewYork" class="places-img">
+                        <div class="place-body">
+                            <h3 class="place-heading">New York</h3>
+                            <p class="place-time">Fri 27 Nov 2016</p>
+                            <p class="place-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+                            <button href="#" class="place-buybuton">Buy tickets</button>
+                        </div>
+                    </div>
+                    <div class="place-item">
+                        <img src="./img/paris.jpeg" alt="NewYork" class="places-img">
+                        <div class="place-body">
+                            <h3 class="place-heading">Paris</h3>
+                            <p class="place-time">Sat 28 Nov 2016</p>
+                            <p class="place-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+                            <button href="#" class="place-buybuton">Buy tickets</button>
+                        </div>
+                    </div>
+                    <div class="place-item">
+                        <img src="./img/sanfran.jpeg" alt="NewYork" class="places-img">
+                        <div class="place-body">
+                            <h3 class="place-heading">San Francisco</h3>
+                            <p class="place-time">Sun 29 Nov 2016</p>
+                            <p class="place-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+                            <button href="#" class="place-buybuton">Buy tickets</button>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    const data = [
+        { month: "September", isSoldOut: true },
+        { month: "October", isSoldOut: true },
+        { month: "November", isSoldOut: false, quantity: 3 },
+    ];
+
+  function createTicketList() {
+    const ticketList = document.createElement("ul");
+    ticketList.className = "ticket-list";
+
+    data.forEach((item) => {
+      const listItem = document.createElement("li");
+      listItem.textContent = item.month;
+
+      const span = document.createElement("span");
+      if (item.isSoldOut) {
+        span.className = "sold-out";
+        span.textContent = "Sold out";
+      } else {
+        span.className = "quantity";
+        span.textContent = item.quantity;
+      }
+
+      listItem.appendChild(span);
+      ticketList.appendChild(listItem);
+    });
+
+    return ticketList;
+  }
+
+
+  const data2 = [
+    {
+      imageSrc: "./img/newyork.jpeg",
+      altText: "New York",
+      place: "New York",
+      time: "Fri 27 Nov 2016",
+      description: "Praesent tincidunt sed tellus ut rutrum sed vitae justo.",
+    },
+    {
+      imageSrc: "./img/paris.jpeg",
+      altText: "Paris",
+      place: "Paris",
+      time: "Sat 28 Nov 2016",
+      description: "Praesent tincidunt sed tellus ut rutrum sed vitae justo.",
+    },
+    {
+      imageSrc: "./img/sanfran.jpeg",
+      altText: "San Francisco",
+      place: "San Francisco",
+      time: "Sun 29 Nov 2016",
+      description: "Praesent tincidunt sed tellus ut rutrum sed vitae justo.",
+    },
+  ];
+
+  function createPlacesList() {
+    const placesList = document.createElement("div");
+    placesList.className = "places-list";
+
+    data2.forEach((item) => {
+      const placeItem = document.createElement("div");
+      placeItem.className = "place-item";
+
+      const image = document.createElement("img");
+      image.src = item.imageSrc;
+      image.alt = item.altText;
+      image.className = "places-img";
+
+      const placeBody = document.createElement("div");
+      placeBody.className = "place-body";
+
+      const placeHeading = document.createElement("h3");
+      placeHeading.className = "place-heading";
+      placeHeading.textContent = item.place;
+
+      const placeTime = document.createElement("p");
+      placeTime.className = "place-time";
+      placeTime.textContent = item.time;
+
+      const placeDesc = document.createElement("p");
+      placeDesc.className = "place-desc";
+      placeDesc.textContent = item.description;
+
+      const buyButton = document.createElement("button");
+      buyButton.className = "place-buybuton";
+      buyButton.textContent = "Buy tickets";
+
+      placeBody.appendChild(placeHeading);
+      placeBody.appendChild(placeTime);
+      placeBody.appendChild(placeDesc);
+      placeBody.appendChild(buyButton);
+
+      placeItem.appendChild(image);
+      placeItem.appendChild(placeBody);
+
+      placesList.appendChild(placeItem);
+    });
+
+    return placesList;
+  }
+
+  const places_list = document.getElementById("places-list");
+  places_list.appendChild(createPlacesList());
+
+  const ticket_list = document.getElementById("ticket-list");
+  ticket_list.appendChild(createTicketList());
+    </script>
+</body>
+</html>
