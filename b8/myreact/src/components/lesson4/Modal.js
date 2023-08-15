@@ -7,7 +7,7 @@ import { useTicketsContext } from '../../TicketsContext';
 
 const Modal = ({ isOpen, onClose, onSubmit }) => {
 
-  const {ticket, updateTickets} = useTicketsContext();
+  const {ticket, updateTickets, setLoading} = useTicketsContext();
 
   const [inputValues, setInputValues] = useState({
     numberOfTickets: '',
@@ -25,6 +25,11 @@ const Modal = ({ isOpen, onClose, onSubmit }) => {
       alert("Quantity exceeds the remaining quantity!!!")
     } else{
       updateTickets(ticket - inputValues.numberOfTickets)
+
+      setLoading(true);
+      setTimeout(() => {
+        setLoading(false);
+      }, 1000)
     }
     
     onSubmit(inputValues);
