@@ -44,8 +44,8 @@ function App() {
   };
 
   const clearCompletedTasks = () => {
-    const updatedTasks = tasks.filter(task => !task.completed);
-    setTasks(updatedTasks);
+    // const updatedTasks = tasks.filter(task => !task.completed);
+    setTasks([]);
   };
 
 
@@ -98,7 +98,7 @@ function App() {
           ))}
         </ul>
         <div className='clearCompletedTasks-btn'>
-          <button onClick={clearCompletedTasks}>Clear Completed</button>
+          <button onClick={clearCompletedTasks}>Delete all</button>
         </div>   
       </div>
     </div>
