@@ -1,0 +1,74 @@
+.App {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 50px;
+}
+.container{
+  width: 500px;
+}
+li{
+  list-style: none;
+}
+.completed {
+  text-decoration: line-through;
+}
+.menu{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: double;
+  margin-bottom: 50px;
+}
+
+.navLink{
+  padding-bottom: 10px;
+  width: 100px;
+  text-decoration: none;
+  color: black;
+}
+
+.inputBox{
+  width: 75%;
+  padding: 6px;
+  border-radius: 6px;
+  border: solid;
+}
+
+.addTask-btn{
+  margin-left: 15px;
+  color: white;
+  border-radius: 6px;
+  border-style: none;
+  padding: 10px 28px;
+  background-color: cornflowerblue;
+}
+
+.task-item{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.taskList{
+  display: flex;
+  justify-content: space-between;
+  height: 35px;
+}
+
+.taskList button{
+  border: none;
+  background-color: white;
+}
+
+.clearCompletedTasks-btn{
+  display: flex;
+  justify-content: flex-end;
+}
+.clearCompletedTasks-btn button{
+  color: white;
+  border-style: none;
+  background-color: rgb(255, 113, 113);
+  border-radius: 6px;
+  padding: 10px 28px;
+}

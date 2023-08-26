@@ -15,6 +15,7 @@ function App() {
 
   return (
     <div className="App">
+      <iframe width="1190" height="669" src="https://www.youtube.com/embed/leJb3VhQCrg" title="W/n - id 072019 | 3107 ft 267" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       <div className='container'>
         <div className='workshop'>
           <h1>WORK SHOP</h1>
