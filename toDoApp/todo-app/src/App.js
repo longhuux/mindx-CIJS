@@ -4,7 +4,7 @@ import {NavLink,Outlet} from 'react-router-dom'
 
 function App() {
   
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState(JSON.parse(localStorage.getItem('tasks')));
   const [taskInput, setTaskInput] = useState('');
   const [filter, setFilter] = useState('all');
   const [isActive, setIsActive] = useState(false);
