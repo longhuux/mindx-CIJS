@@ -3,15 +3,15 @@ import './App.css';
 import {NavLink,Outlet} from 'react-router-dom'
 
 function App() {
-  
-  const [tasks, setTasks] = useState(JSON.parse(localStorage.getItem('tasks')));
+  let storedTasks = [];
+  const [tasks, setTasks] = useState(storedTasks);
   const [taskInput, setTaskInput] = useState('');
   const [filter, setFilter] = useState('all');
   const [isActive, setIsActive] = useState(false);
 
   
+  storedTasks = JSON.parse(localStorage.getItem('tasks'));
   useEffect(() => {
-    const storedTasks = JSON.parse(localStorage.getItem('tasks'));
     if (storedTasks) {
       setTasks(storedTasks);
     }
